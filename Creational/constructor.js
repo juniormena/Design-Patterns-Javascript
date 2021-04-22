@@ -12,7 +12,7 @@ Task.prototype.save = function(){
     console.log('Saving task: ' + this.name);
 };
 
-let task1 = new Task('Create a demo constructor');
+/*let task1 = new Task('Create a demo constructor');
 let task2 = new Task('Create a demo module');
 let task3 = new Task('Create a demo singlenton');
 let task4 = new Task('Create a demo prototypes');
@@ -20,4 +20,7 @@ let task4 = new Task('Create a demo prototypes');
 task1.makeComplete();
 task2.save();
 task3.save();
-task4.save();
+task4.save();*/
+
+
+module.exports = Task;
