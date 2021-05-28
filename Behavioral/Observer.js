@@ -39,6 +39,24 @@ class ObserverList{
     count(){
         return this.obsserverList.length;
     }
+
+    removeAt(index){
+        this.obsserverList.splice(index,1);
+    }
+
+    indexOf(obj,startIndex){
+        let i = startIndex;
+
+        while(i<this.obsserverList.length){
+            if(this.obsserverList[i]===obj){
+                return i;
+            }
+            i++;
+        }
+
+        return -1;
+    }
+
 }
 const ObservableTask = function(data){
     Task.call(this,data);
@@ -61,6 +79,10 @@ ObservableTask.prototype.save = function(){
     Task.prototype.save.call(this);
 }
 
+ObservableTask.prototype.removeObserver = function(observer){
+    this.observers.removeAt(this.observers.indexOf(observer,0));
+}
+
 
 
 const task1 = new ObservableTask({name:'create a demo for constructors', user:'John'});
@@ -77,4 +99,7 @@ task1.addObserver(audit.update);
 
 
 
+task1.save();
+
+task1.removeObserver(audit.update);
 task1.save();
