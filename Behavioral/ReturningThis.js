@@ -1,17 +1,17 @@
 function AnimalSounds() {}
 
 AnimalSounds.prototype.cow = function() {
-    alert("moo");
+    console.log("moo");
     return this;
 }
 
 AnimalSounds.prototype.pig = function() {
-    alert("oink");
+    console.log("oink");
     return this;
 }
 
 AnimalSounds.prototype.dog = function() {
-    alert("woof");
+    console.log("woof");
     return this;
 }
 
